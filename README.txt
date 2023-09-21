@@ -26,6 +26,7 @@ pip install PyWavelets
 pip install jupyter
 
 4. Download My Repository Files
+https://github.com/DaeHyeokOH/Palette/tree/master
 
 5. Put RAW Data Files in "./Data/raw_data"
 

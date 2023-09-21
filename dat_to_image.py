@@ -3,6 +3,7 @@ import pandas as pd
 from tqdm import tqdm
 import pickle
 import pywt
+import os
 #본 파일은 .dat파일을 읽고 이를 par#, video#, session#, channel#, features, vlence, arousal이 column인 DF를 만들도록 한다.
 #fix participant
 
@@ -73,6 +74,16 @@ def WE(y, level = 5, wavelet = 'db4'):
 
     return np.mean(Enr), np.mean(Pi), we
 
+def create_dir(filepath):
+    if not os.path.exists(filepath):
+        os.mkdir(filepath)
+
+
+##처리할 이미지를 저장하기 위한 폴더 생성
+create_dir("./Data/data_palettes_test")
+create_dir("./Data/data_palettes_train/")
+
+#Start making
 for participant_id in tqdm(range(1,33)):
 
     filepath = "./Data/raw_data/s" + format(participant_id, '02') +".dat"
